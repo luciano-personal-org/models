@@ -7,7 +7,7 @@ type Book struct {
 	Position  uint    `json:"Position"`
 	Direction byte    `json:"Direction"`
 	Price     float64 `json:"Price"`
-	Quantity  float64 `json:"Quantity"`
+	Quantity  uint    `json:"Quantity"`
 	DateTime  string  `json:"DateTime"`
 	OrderId   string  `json:"OrderId"`
 }
