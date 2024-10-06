@@ -11,5 +11,5 @@ type Book struct {
 	OrderId      string  `json:"OrderId"`
 	Quantity     uint    `json:"Quantity"`
 	OfferType    byte    `json:"OfferType"`
-	QuantityMean uint    `json:"QuantityMean"`
+	QuantityMean uint64  `json:"QuantityMean"`
 }
