@@ -3,7 +3,7 @@ package models
 // Quote struct for quote.
 type Candle struct {
 	ID              string  `json:"ID"`
-	StockName       string  `json:"StockName"`
+	Symbol          string  `json:"Symbol"`
 	TimeStamp       string  `json:"TimeStamp"`
 	Date            string  `json:"Date"`
 	Current         float64 `json:"Current"`
