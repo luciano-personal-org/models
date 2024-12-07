@@ -2,11 +2,12 @@ package models
 
 // Quote struct for quote.
 type Signal struct {
-	Candle      Candle          // The candle that generated the signal
-	Direction   SignalDirection // BUY or SELL
-	PriceTarget float64         // The price target for the signal
-	StopLoss    float64         // The price for the loss of the signal
-	Strength    float64         // 0 to 1
+	ID          string          `json:"ID"`              // Unique identifier for the signal
+	Candle      Candle          `json:"Candle"`          // The candle that generated the signal
+	Direction   SignalDirection `json:"SignalDirection"` // BUY or SELL
+	PriceTarget float64         `json:"PriceTarget"`     // The price target for the signal
+	StopLoss    float64         `json:"StopLoss"`        // The price for the loss of the signal
+	Strength    float64         `json:"Strength"`        // 0 to 1
 }
 
 // SignalDirection is an enum-like type for signal direction.
