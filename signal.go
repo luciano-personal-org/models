@@ -23,3 +23,28 @@ const (
 func (d SignalDirection) String() string {
 	return [...]string{"SIGNAL_BUY", "SIGNAL_SELL"}[d]
 }
+
+type SignalType int
+
+const (
+	SIGNAL_LIMIT SignalType = iota
+	SIGNAL_MARKET
+	SIGNAL_STOP_LOSS
+	SIGNAL_STOP_LOSS_LIMIT
+	SIGNAL_TAKE_PROFIT
+	SIGNAL_TAKE_PROFIT_LIMIT
+	SIGNAL_LIMIT_MAKER
+)
+
+// String returns the string representation of the SignalDirection.
+func (d SignalType) String() string {
+	return [...]string{
+		"SIGNAL_LIMIT",
+		"SIGNAL_MARKET",
+		"SIGNAL_STOP_LOSS",
+		"SIGNAL_STOP_LOSS_LIMIT",
+		"SIGNAL_TAKE_PROFIT",
+		"SIGNAL_TAKE_PROFIT_LIMIT",
+		"SIGNAL_LIMIT_MAKER",
+	}[d]
+}
