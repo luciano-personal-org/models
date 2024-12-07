@@ -6,7 +6,7 @@ type Order struct {
 	Signal    Signal    `json:"Signal"`    // The candle that generated the signal
 	Side      OrderSide `json:"OrderSide"` // BUY or SELL
 	Quantity  float64   `json:"Quantity"`  // The quantity of the order
-	Price     float64   `json:"Price"`     // The price target for the signal
+	StopGain  float64   `json:"StopGain"`  // The price target for the signal
 	StopLoss  float64   `json:"StopLoss"`  // The price for the loss of the signal
 	Strength  float64   `json:"Strength"`  // 0.0 to 1.0
 	OrderType OrderType `json:"OrderType"` // The type of order
