@@ -5,6 +5,7 @@ type Signal struct {
 	ID          string          `json:"ID"`              // Unique identifier for the signal
 	Candle      Candle          `json:"Candle"`          // The candle that generated the signal
 	Direction   SignalDirection `json:"SignalDirection"` // BUY or SELL
+	PriceOrigin float64         `json:"PriceOrigin"`     // The price that originated the signal
 	PriceTarget float64         `json:"PriceTarget"`     // The price target for the signal
 	StopLoss    float64         `json:"StopLoss"`        // The price for the loss of the signal
 	Strength    float64         `json:"Strength"`        // 0 to 1
