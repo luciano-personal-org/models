@@ -1,6 +1,6 @@
 package models
 
-// Quote struct for quote.
+// Quote struct for the Signal.
 type Signal struct {
 	ID        string          `json:"ID"`              // Unique identifier for the signal
 	Candle    Candle          `json:"Candle"`          // The candle that generated the signal
@@ -15,36 +15,11 @@ type Signal struct {
 type SignalDirection int
 
 const (
-	BUY SignalDirection = iota
-	SELL
+	SIGNAL_BUY SignalDirection = iota
+	SIGNAL_SELL
 )
 
 // String returns the string representation of the SignalDirection.
 func (d SignalDirection) String() string {
-	return [...]string{"BUY", "SELL"}[d]
-}
-
-type OrderType int
-
-const (
-	LIMIT OrderType = iota
-	MARKET
-	STOP_LOSS
-	STOP_LOSS_LIMIT
-	TAKE_PROFIT
-	TAKE_PROFIT_LIMIT
-	LIMIT_MAKER
-)
-
-// String returns the string representation of the SignalDirection.
-func (d OrderType) String() string {
-	return [...]string{
-		"LIMIT",
-		"MARKET",
-		"STOP_LOSS",
-		"STOP_LOSS_LIMIT",
-		"TAKE_PROFIT",
-		"TAKE_PROFIT_LIMIT",
-		"LIMIT_MAKER",
-	}[d]
+	return [...]string{"SIGNAL_BUY", "SIGNAL_SELL"}[d]
 }
