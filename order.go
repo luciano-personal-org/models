@@ -1,18 +1,31 @@
 package models
 
-// Quote struct for the Order.
-type Order struct {
+// Orders struct for the Orders.
+type Orders struct {
+	ID       string      `json:"ID"`          // Unique identifier for the signal
+	First    FirstOrder  `json:"FirstOrder"`  // Details of the First Signal
+	Second   SecondOrder `json:"SecondOrder"` // Details of the Second Signal
+	Strength float64     `json:"Strength"`    // 0.0 to 1.0
+}
+
+// FirstOrder struct for the First Order.
+type FirstOrder struct {
 	ID        string    `json:"ID"`        // Unique identifier for the signal
-	Signal    Signal    `json:"Signal"`    // The candle that generated the signal
-	Side      OrderSide `json:"OrderSide"` // BUY or SELL
-	Quantity  float64   `json:"Quantity"`  // The quantity of the order
-	StopGain  float64   `json:"StopGain"`  // The price target for the signal
-	StopLoss  float64   `json:"StopLoss"`  // The price for the loss of the signal
-	Strength  float64   `json:"Strength"`  // 0.0 to 1.0
+	Candle    Candle    `json:"Candle"`    // The candle that generated the signal
+	OrderSide OrderSide `json:"OrderSide"` // The side of order
 	OrderType OrderType `json:"OrderType"` // The type of order
 }
 
-// SignalDirection is an enum-like type for signal direction.
+// SecondOrder struct for the Second Order.
+type SecondOrder struct {
+	ID        string    `json:"ID"`        // Unique identifier for the signal
+	Candle    Candle    `json:"Candle"`    // The candle that generated the signal
+	StopGain  float64   `json:"StopGain"`  // The price target for the signal
+	StopLoss  float64   `json:"StopLoss"`  // The price for the loss of the signal
+	OrderSide OrderSide `json:"OrderSide"` // The side of order
+	OrderType OrderType `json:"OrderType"` // The type of order
+}
+
 type OrderSide int
 
 const (
@@ -20,7 +33,6 @@ const (
 	SELL
 )
 
-// String returns the string representation of the SignalDirection.
 func (d OrderSide) String() string {
 	return [...]string{"BUY", "SELL"}[d]
 }
@@ -37,7 +49,6 @@ const (
 	LIMIT_MAKER
 )
 
-// String returns the string representation of the SignalDirection.
 func (d OrderType) String() string {
 	return [...]string{
 		"LIMIT",
