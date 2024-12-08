@@ -16,13 +16,13 @@ type Order struct {
 type OrderSide int
 
 const (
-	SIDE_BUY OrderSide = iota
-	SIDE_SELL
+	BUY OrderSide = iota
+	SELL
 )
 
 // String returns the string representation of the SignalDirection.
 func (d OrderSide) String() string {
-	return [...]string{"SIDE_BUY", "SIDE_SELL"}[d]
+	return [...]string{"BUY", "SELL"}[d]
 }
 
 type OrderType int
