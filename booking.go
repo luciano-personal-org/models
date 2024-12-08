@@ -3,7 +3,7 @@ package models
 // Quote struct for the Order.
 type Booking struct {
 	ID              string          `json:"ID"`              // Unique identifier for the signal
-	Signals         Orders          `json:"Orders"`          // The candle that generated the signal
+	Orders          Orders          `json:"Orders"`          // The candle that generated the signal
 	Quantity        float64         `json:"Quantity"`        // The quantity of the order
 	MarketDirection MarketDirection `json:"MarketDirection"` // The type of order
 }
