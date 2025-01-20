@@ -59,3 +59,25 @@ func (d OrderType) String() string {
 		"LIMIT_MAKER",
 	}[d]
 }
+
+type TypeInForce int
+
+const (
+	GTC TypeInForce = iota
+)
+
+func (d TypeInForce) String() string {
+	return [...]string{"GTC"}[d]
+}
+
+type NewOrderRespType int
+
+const (
+	ACK NewOrderRespType = iota
+	FULL
+	RESULT
+)
+
+func (d NewOrderRespType) String() string {
+	return [...]string{"ACK", "FULL", "RESULT"}[d]
+}
