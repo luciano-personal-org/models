@@ -18,14 +18,15 @@ type FirstOrder struct {
 
 // SecondOrder struct for the Second Order.
 type SecondOrder struct {
-	ID        string    `json:"ID"`        // Unique identifier for the signal
-	StopGain  float64   `json:"StopGain"`  // The price target for the signal
-	StopLoss  float64   `json:"StopLoss"`  // The price for the loss of the signal
-	Exit10    float64   `json:"Exit10"`    // The price for the 10% exit of the signal
-	Exit20    float64   `json:"Exit20"`    // The price for the 20% exit of the signal
-	Exit30    float64   `json:"Exit30"`    // The price for the 30% exit of the signal
-	OrderSide OrderSide `json:"OrderSide"` // The side of order
-	OrderType OrderType `json:"OrderType"` // The type of order
+	ID          string    `json:"ID"`          // Unique identifier for the signal
+	StopGain    float64   `json:"StopGain"`    // The price target for the signal
+	StopLoss    float64   `json:"StopLoss"`    // The price for the loss of the signal
+	ExitEnabled bool      `json:"ExitEnabled"` // The price for the loss of the signal
+	Exit10      float64   `json:"Exit10"`      // The price for the 10% exit of the signal
+	Exit20      float64   `json:"Exit20"`      // The price for the 20% exit of the signal
+	Exit30      float64   `json:"Exit30"`      // The price for the 30% exit of the signal
+	OrderSide   OrderSide `json:"OrderSide"`   // The side of order
+	OrderType   OrderType `json:"OrderType"`   // The type of order
 }
 
 type OrderSide int
