@@ -1,5 +1,9 @@
 package models
 
+import (
+	"go.opentelemetry.io/otel/propagation"
+)
+
 // Quote struct for quote.
 type Candle struct {
 	ID              string  `json:"ID"`
@@ -16,6 +20,6 @@ type Candle struct {
 }
 
 type CandleV2 struct {
-	Envelope Envelope `json:"Envelope"`
-	Candle   Candle   `json:"Candle"`
+	Carrier propagation.MapCarrier `json:"Carrier"`
+	Candle  Candle                 `json:"Candle"`
 }
