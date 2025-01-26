@@ -14,3 +14,8 @@ type Candle struct {
 	Volume          uint64  `json:"Volume"`
 	VolumeVariation float64 `json:"VolumeVariation"`
 }
+
+type CandleV2 struct {
+	Envelope Envelope `json:"Envelope"`
+	Candle   Candle   `json:"Candle"`
+}
