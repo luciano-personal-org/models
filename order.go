@@ -7,6 +7,7 @@ type Orders struct {
 	Second   SecondOrder `json:"SecondOrder"` // Details of the Second Signal
 	Strength float64     `json:"Strength"`    // 0.0 to 1.0
 	Candle   Candle      `json:"Candle"`      // The candle that generated the signal
+	Volume   float64     `json:"Volume"`      // The volume of the signal
 }
 
 // FirstOrder struct for the First Order.
