@@ -14,6 +14,7 @@ type FirstOrder struct {
 	ID        string    `json:"ID"`        // Unique identifier for the signal
 	OrderSide OrderSide `json:"OrderSide"` // The side of order
 	OrderType OrderType `json:"OrderType"` // The type of order
+	Price     float64   `json:"Price"`     // The price of the order
 }
 
 // SecondOrder struct for the Second Order.
