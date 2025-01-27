@@ -9,6 +9,8 @@ type Booking struct {
 	MarketDirection        MarketDirection `json:"MarketDirection"`        // The type of order
 }
 
+type Bookings []Booking
+
 type MarketDirection int
 
 const (
