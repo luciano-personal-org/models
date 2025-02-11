@@ -10,6 +10,15 @@ type Orders struct {
 	Volume   float64     `json:"Volume"`      // The volume of the signal
 }
 
+type Ordersv2 struct {
+	ID       string        `json:"ID"`          // Unique identifier for the signal
+	First    FirstOrder    `json:"FirstOrder"`  // Details of the First Signal
+	Second   []SecondOrder `json:"SecondOrder"` // Details of the Second Signal
+	Strength float64       `json:"Strength"`    // 0.0 to 1.0
+	Candle   Candle        `json:"Candle"`      // The candle that generated the signal
+	Volume   float64       `json:"Volume"`      // The volume of the signal
+}
+
 // FirstOrder struct for the First Order.
 type FirstOrder struct {
 	ID        string    `json:"ID"`        // Unique identifier for the signal
@@ -20,15 +29,10 @@ type FirstOrder struct {
 
 // SecondOrder struct for the Second Order.
 type SecondOrder struct {
-	ID          string    `json:"ID"`          // Unique identifier for the signal
-	StopGain    float64   `json:"StopGain"`    // The price target for the signal
-	StopLoss    float64   `json:"StopLoss"`    // The price for the loss of the signal
-	ExitEnabled bool      `json:"ExitEnabled"` // The price for the loss of the signal
-	Exit10      float64   `json:"Exit10"`      // The price for the 10% exit of the signal
-	Exit20      float64   `json:"Exit20"`      // The price for the 20% exit of the signal
-	Exit30      float64   `json:"Exit30"`      // The price for the 30% exit of the signal
-	OrderSide   OrderSide `json:"OrderSide"`   // The side of order
-	OrderType   OrderType `json:"OrderType"`   // The type of order
+	ID        string    `json:"ID"`        // Unique identifier for the signal
+	StopGain  float64   `json:"StopGain"`  // The price target for the signal
+	OrderSide OrderSide `json:"OrderSide"` // The side of order
+	OrderType OrderType `json:"OrderType"` // The type of order
 }
 
 type OrderSide int
