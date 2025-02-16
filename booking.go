@@ -11,7 +11,7 @@ type Booking struct {
 
 type Bookingv2 struct {
 	ID                     string          `json:"ID"`                     // Unique identifier for the signal
-	Orders                 Ordersv2        `json:"Orders"`                 // The candle that generated the signal
+	Trades                 []Trade         `json:"Trades"`                 // Details of the Trades
 	Quantity               float64         `json:"Quantity"`               // The quantity of the order
 	QuantityAfterComission float64         `json:"QuantityAfterComission"` // The quantity of the order after comission
 	MarketDirection        MarketDirection `json:"MarketDirection"`        // The type of order
