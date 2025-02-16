@@ -6,5 +6,5 @@ type Trade struct {
 	SecondOrder SecondOrder `json:"SecondOrder"` // Details of the Second Signal
 	Quantity    float64     `json:"Quantity"`    // The quantity of the order
 	Candle      Candle      `json:"Candle"`      // The candle that generated the signal
-
+	Gain        float64     `json:"Gain"`        // The gain of the trade
 }
